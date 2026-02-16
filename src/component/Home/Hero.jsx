@@ -35,7 +35,7 @@ const Hero = () => {
       title: "Discover Real Craftsmanship",
       desc: "Explore authentic handmade products from the heart of Bangladesh, delivered safely to your doorstep.",
       image:
-        "https://images.unsplash.com/photo-1610116303244-6239f893fb7f?q=80&w=1470&auto=format&fit=crop",
+        "https://i.ibb.co.com/y9D4jvj/photographer-man-viewing-his-photos-camera-53876-119842.avif",
       primaryBtn: "Browse Shop",
       secondaryBtn: "View Categories",
       iconP: <ShoppingBag size={20} />,
@@ -47,7 +47,7 @@ const Hero = () => {
       title: "Safe & Trustworthy Shopping",
       desc: "Our secure escrow system ensures your money is protected until you receive and verify your product.",
       image:
-        "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?q=80&w=1470&auto=format&fit=crop",
+        "https://i.ibb.co.com/fV6x6Jjj/pexels-photo-3612182.jpg",
       primaryBtn: "How it Works",
       secondaryBtn: "Join as Seller",
       iconP: <Info size={20} />,
@@ -59,7 +59,7 @@ const Hero = () => {
       title: "Elevate Your Lifestyle",
       desc: "From traditional wear to modern home decor, find everything you need in one secure marketplace.",
       image:
-        "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1470&auto=format&fit=crop",
+        "https://i.ibb.co.com/fY5WV9mp/garment-photoshoot-skirts-dresses-shirts-sweaters-trousers-coats-chemises-and-jeans-photography-brin.jpg",
       primaryBtn: "Shop Now",
       secondaryBtn: "New Arrivals",
       iconP: <ShoppingBag size={20} />,
@@ -71,7 +71,7 @@ const Hero = () => {
       title: "Swift Delivery Nationwide",
       desc: "Experience the fastest delivery service with real-time tracking for every order you place.",
       image:
-        "https://images.unsplash.com/photo-1566576721346-d4a3b4eaad5b?q=80&w=1470&auto=format&fit=crop",
+        "https://i.ibb.co.com/jvR8kw6N/How-Does-360-Product-Photography-Work.webp",
       primaryBtn: "Track Order",
       secondaryBtn: "Help Center",
       iconP: <Truck size={20} />,
@@ -111,7 +111,7 @@ const Hero = () => {
 
                   <h1
                     key={`title-${activeIndex}`}
-                    className="text-5xl md:text-7xl font-extrabold leading-[1.1] mb-6 text-[#2D2D2D] animate-vibrate"
+                    className="text-3xl md:text-[60px] font-extrabold leading-[1.1] mb-6 text-[#2D2D2D] animate-vibrate text-shadow-premium"
                   >
                     {slide.title}
                   </h1>
@@ -119,7 +119,7 @@ const Hero = () => {
                   <p
                     data-aos="fade-right"
                     data-aos-delay="200"
-                    className="text-lg text-gray-600 max-w-lg leading-relaxed mb-8"
+                    className="text-lg text-gray-600 max-w-lg leading-relaxed mb-8 text-shadow-premium"
                   >
                     {slide.desc}
                   </p>
@@ -129,10 +129,10 @@ const Hero = () => {
                     data-aos-delay="400"
                     className="flex flex-wrap gap-5"
                   >
-                    <button className="flex items-center gap-2 px-8 py-4 bg-[#F1641E] hover:bg-[#d9561a] text-white rounded-2xl font-bold transition-all transform hover:scale-105 shadow-lg shadow-orange-500/30">
+                    <button className="flex items-center gap-2 px-8 py-4 bg-[#F1641E] hover:bg-[#d9561a] text-white rounded-2xl font-bold transition-all transform hover:scale-105 shadow-lg shadow-orange-500/30 text-shadow-premium cursor-pointer">
                       {slide.iconP} {slide.primaryBtn}
                     </button>
-                    <button className="flex items-center gap-2 px-8 py-4 bg-white hover:bg-gray-50 border border-orange-100 text-[#2D2D2D] rounded-2xl font-bold transition-all shadow-sm">
+                    <button className="flex items-center gap-2 px-8 py-4 bg-white hover:bg-gray-50 border border-orange-100 text-[#2D2D2D] rounded-2xl font-bold transition-all shadow-sm text-shadow-premium cursor-pointer">
                       {slide.iconS} {slide.secondaryBtn}
                     </button>
                   </div>
@@ -141,9 +141,9 @@ const Hero = () => {
                 {/* Right Side Image with Angle Zoom-out Effect */}
                 <div className="order-1 md:order-2 flex justify-center">
                   <div
-                    data-aos="zoom-in"
-                    data-aos-duration="1500"
-                    className="relative group w-[300px] h-[380px] md:w-[450px] md:h-[550px] perspective-1000"
+                    data-aos="zoom-out"
+                    data-aos-duration="1000"
+                    className="relative group w-[300px] h-[380px] md:w-[500px] md:h-[550px] perspective-1000"
                   >
                     {/* Hover Effect Container */}
                     <div className="relative w-full h-full transition-all duration-700 ease-in-out transform group-hover:rotate-x-6 group-hover:rotate-y-12 group-hover:scale-95">
