@@ -15,19 +15,16 @@ const Hero = () => {
     AOS.init({
       duration: 1000,
       once: false,
-      mirror: true,
     });
   }, []);
 
-  // 4 image & dynamic slider
   const slides = [
     {
       id: 1,
       badge: "Handmade Treasures",
       title: "Discover Real Craftsmanship",
       desc: "Explore authentic handmade products from the heart of Bangladesh, delivered safely to your doorstep.",
-      image:
-        "https://images.unsplash.com/photo-1610116303244-6239f893fb7f?q=80&w=1470&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1610116303244-6239f893fb7f?q=80&w=1470&auto=format&fit=crop",
       primaryBtn: "Browse Shop",
       secondaryBtn: "View Categories",
     },
@@ -36,8 +33,7 @@ const Hero = () => {
       badge: "Secure Escrow",
       title: "Safe & Trustworthy Shopping",
       desc: "Our secure escrow system ensures your money is protected until you receive and verify your product.",
-      image:
-        "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?q=80&w=1470&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?q=80&w=1470&auto=format&fit=crop",
       primaryBtn: "Learn More",
       secondaryBtn: "Join as Seller",
     },
@@ -46,8 +42,7 @@ const Hero = () => {
       badge: "Premium Collection",
       title: "Elevate Your Lifestyle",
       desc: "From traditional wear to modern home decor, find everything you need in one secure marketplace.",
-      image:
-        "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1470&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1470&auto=format&fit=crop",
       primaryBtn: "Shop Collection",
       secondaryBtn: "New Arrivals",
     },
@@ -56,8 +51,7 @@ const Hero = () => {
       badge: "Fast Delivery",
       title: "Swift Delivery Nationwide",
       desc: "Experience the fastest delivery service with real-time tracking for every order you place.",
-      image:
-        "https://images.unsplash.com/photo-1566576721346-d4a3b4eaad5b?q=80&w=1470&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaad5b?q=80&w=1470&auto=format&fit=crop",
       primaryBtn: "Track Order",
       secondaryBtn: "Help Center",
     },
@@ -65,54 +59,46 @@ const Hero = () => {
 
   return (
     <section className="relative w-full min-h-[90vh] bg-[#0a0a0a] text-white flex items-center overflow-hidden py-16 md:py-0">
-      {/* Background Decorative Gradients */}
-      <div className="absolute top-[-10%] left-[-5%] w-[400px] h-[400px] bg-purple-600/10 blur-[120px] rounded-full"></div>
-      <div className="absolute bottom-[-10%] right-[-5%] w-[400px] h-[400px] bg-indigo-600/10 blur-[120px] rounded-full"></div>
+      {/* Background Gradients */}
+      <div className="absolute top-[-10%] left-[-5%] w-[400px] h-[400px] bg-purple-600/10 blur-[120px] rounded-full -z-0"></div>
+      <div className="absolute bottom-[-10%] right-[-5%] w-[400px] h-[400px] bg-indigo-600/10 blur-[120px] rounded-full -z-0"></div>
 
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 relative z-10">
         <Swiper
           modules={[Autoplay, Pagination, EffectFade]}
-          effect={"fade"} // Smooth transition fade effect
+          effect={"fade"}
+          fadeEffect={{ crossFade: true }} 
           autoplay={{ delay: 5000, disableOnInteraction: false }}
           pagination={{ clickable: true }}
+          loop={true}
           className="hero-swiper"
         >
           {slides.map((slide) => (
-            <SwiperSlide key={slide.id}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center min-h-[70vh]">
-                {/* Left Side: Text Content */}
-                <div className="order-2 md:order-1 space-y-6">
-                  <div data-aos="fade-down">
-                    <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-sm font-semibold text-indigo-400">
-                      <span className="relative flex h-2 w-2">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+            <SwiperSlide key={slide.id} className="bg-[#0a0a0a]"> 
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center min-h-[70vh] py-10">
+                
+                {/* Left Side: Content */}
+                <div className="order-2 md:order-1 flex flex-col justify-center">
+                  <div className="overflow-hidden mb-4">
+                     <span data-aos="fade-down" className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-sm font-semibold text-indigo-400">
+                        <span className="relative flex h-2 w-2">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                        </span>
+                        {slide.badge}
                       </span>
-                      {slide.badge}
-                    </span>
                   </div>
 
-                  <h1
-                    data-aos="fade-right"
-                    data-aos-delay="200"
-                    className="text-5xl md:text-7xl font-extrabold leading-[1.1] bg-gradient-to-r from-white via-gray-100 to-gray-500 bg-clip-text text-transparent"
-                  >
+                  <h1 data-aos="fade-right" data-aos-delay="200" className="text-5xl md:text-7xl font-extrabold leading-[1.1] mb-6 bg-gradient-to-r from-white via-gray-100 to-gray-500 bg-clip-text text-transparent">
                     {slide.title}
                   </h1>
 
-                  <p
-                    data-aos="fade-right"
-                    data-aos-delay="400"
-                    className="text-lg text-gray-400 max-w-lg leading-relaxed"
-                  >
+                  <p data-aos="fade-right" data-aos-delay="400" className="text-lg text-gray-400 max-w-lg leading-relaxed mb-8">
                     {slide.desc}
                   </p>
 
-                  <div
-                    data-aos="fade-up"
-                    data-aos-delay="600"
-                    className="flex flex-wrap gap-5 pt-4"
-                  >
+                  <div data-aos="fade-up" data-aos-delay="600" className="flex flex-wrap gap-5">
                     <button className="px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-bold transition-all transform hover:scale-105 shadow-xl shadow-indigo-500/25">
                       {slide.primaryBtn}
                     </button>
@@ -122,54 +108,28 @@ const Hero = () => {
                   </div>
                 </div>
 
-                {/* Right Side: Image with Advanced Hover Effect */}
+                {/* Right Side: Image */}
                 <div className="order-1 md:order-2 flex justify-center">
-                  <div
-                    data-aos="zoom-in-left"
-                    data-aos-duration="1200"
-                    className="relative group w-[280px] h-[350px] md:w-[420px] md:h-[520px]"
-                  >
-                    {/* Background Glow on Hover */}
-                    <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-[45px] blur opacity-20 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
-
-                    {/* Dynamic Border Frame */}
+                  <div data-aos="zoom-in-left" data-aos-duration="1200" className="relative group w-[280px] h-[350px] md:w-[420px] md:h-[520px]">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-[45px] blur opacity-20 group-hover:opacity-60 transition duration-1000"></div>
                     <div className="absolute inset-0 border-2 border-indigo-500/20 rounded-[40px] translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500 -z-10"></div>
-
-                    {/* Main Image Container */}
                     <div className="relative w-full h-full rounded-[40px] overflow-hidden border border-white/10 bg-[#1a1a1a] shadow-2xl">
-                      <img
-                        src={slide.image}
-                        alt={slide.title}
-                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 group-hover:rotate-1"
-                      />
-                      {/* Overlay on Hover */}
-                      <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+                      <img src={slide.image} alt={slide.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                     </div>
                   </div>
                 </div>
+
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
 
-      {/* Pagination Styles */}
       <style jsx global>{`
-        .swiper-pagination-bullet {
-          width: 12px;
-          height: 12px;
-          background: rgba(255, 255, 255, 0.2) !important;
-          opacity: 1 !important;
-        }
-        .swiper-pagination-bullet-active {
-          background: #6366f1 !important;
-          width: 30px;
-          border-radius: 6px;
-          transition: all 0.3s ease;
-        }
-        .hero-swiper {
-          padding-bottom: 60px !important;
-        }
+        .swiper-pagination-bullet { background: rgba(255, 255, 255, 0.2) !important; opacity: 1 !important; }
+        .swiper-pagination-bullet-active { background: #6366f1 !important; width: 30px; border-radius: 6px; }
+        .hero-swiper { padding-bottom: 60px !important; }
+        .swiper-slide-active [data-aos] { opacity: 1 !important; transform: translate(0) scale(1) !important; }
       `}</style>
     </section>
   );
