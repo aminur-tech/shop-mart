@@ -5,10 +5,14 @@ import BentoGrid from "@/component/Home/BentoGrid";
 import NewArrivalsScroll from "@/component/Home/NewArrivalsScroll";
 import BrandLogos from "@/component/Home/BrandLogos";
 import Testimonial from "@/component/Home/Testimonial";
-import TrustSection from "@/component/Home/TrustSection"; // Fixed import
+import TrustSection from "@/component/Home/TrustSection";
 import Newsletter from "@/component/Home/Newsletter";
+import { getLatestProducts } from "@/lib/dbProducts";
+import LatestProducts from "@/component/Home/LatestProducts";
 
-export default function Home() {
+export default async function Home() {
+  const products = await getLatestProducts();
+
   return (
     <main className="min-h-screen bg-white">
       {/* 1. Hero / Main Visual */}
@@ -16,6 +20,8 @@ export default function Home() {
 
       {/* 2. Quick Navigation */}
       <CategoryRibbon />
+
+      <LatestProducts initialProducts={products} />
 
       {/* 3. Urgency / Conversion */}
       <FlashSale />
