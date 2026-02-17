@@ -37,9 +37,12 @@ const AboutPage = () => {
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
               We leverage smart technology and strict quality control to build
-              trust in every step. Whether you're a small business owner or a
+              trust in every step. Whether youre a small business owner or a
               daily shopper, ShopMart empowers you with convenience, confidence,
-              and complete control over your online shopping journey.
+              and complete control over your online shopping journey. ShopMart
+              is not just an e-commerce site; its a modern ecosystem. We solve
+              the core issues of online shopping: **Fraud, Delivery Uncertainty,
+              and Payment Risks.**
             </p>
             <div className="flex gap-4">
               <div className="p-4 bg-blue-50 rounded-lg">
