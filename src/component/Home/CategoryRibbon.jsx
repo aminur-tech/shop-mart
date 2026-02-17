@@ -12,7 +12,7 @@ const categories = [
 export default function CategoryRibbon() {
   return (
     <section className="py-8 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 flex gap-8 overflow-x-auto no-scrollbar">
+      <div className="max-w-7xl mx-auto px-4 flex gap-8 overflow-x-auto no-scrollbar justify-center">
         {categories.map((cat) => (
           <div key={cat.name} className="flex flex-col items-center min-w-[90px] cursor-pointer group">
             <div className={`w-16 h-16 rounded-full flex items-center justify-center transition-transform group-hover:scale-110 ${cat.color}`}>

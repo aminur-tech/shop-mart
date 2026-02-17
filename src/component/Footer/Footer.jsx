@@ -91,7 +91,7 @@ const Footer = () => {
                 Privacy policy
               </li>
               <li className="hover:text-white cursor-pointer transition-colors">
-                Terms of service
+                <Link href="/terms"> Terms of service</Link>{" "}
               </li>
             </ul>
           </div>
