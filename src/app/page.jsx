@@ -7,8 +7,13 @@ import BrandLogos from "@/component/Home/BrandLogos";
 import Testimonial from "@/component/Home/Testimonial";
 import TrustSection from "@/component/Home/TrustSection"; // Fixed import
 import Newsletter from "@/component/Home/Newsletter";
+import connectDB from "@/lib/db";
+import Product from "@/models/Product";
+import ProductCard from "@/components/ProductCard";
+import LatestProducts from "@/component/Home/LatestProducts";
 
 export default function Home() {
+
   return (
     <main className="min-h-screen bg-white">
       {/* 1. Hero / Main Visual */}
@@ -16,6 +21,8 @@ export default function Home() {
 
       {/* 2. Quick Navigation */}
       <CategoryRibbon />
+
+      <LatestProducts />
 
       {/* 3. Urgency / Conversion */}
       <FlashSale />
