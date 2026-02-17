@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import {
   FaFacebookF,
@@ -78,7 +79,10 @@ const Footer = () => {
             </h3>
             <ul className="space-y-4 text-sm">
               <li className="hover:text-white cursor-pointer transition-colors">
-                About us
+                <Link href="/about">About</Link>
+              </li>
+              <li className="hover:text-white cursor-pointer transition-colors">
+                <Link href="/contact">Contact</Link>
               </li>
               <li className="hover:text-white cursor-pointer transition-colors">
                 Open positions
