@@ -36,9 +36,10 @@ const AboutPage = () => {
               Our Vision
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
-              ShopMart is not just an e-commerce site; it's a modern ecosystem.
-              We solve the core issues of online shopping: **Fraud, Delivery
-              Uncertainty, and Payment Risks.**
+              We leverage smart technology and strict quality control to build
+              trust in every step. Whether you're a small business owner or a
+              daily shopper, ShopMart empowers you with convenience, confidence,
+              and complete control over your online shopping journey.
             </p>
             <div className="flex gap-4">
               <div className="p-4 bg-blue-50 rounded-lg">
