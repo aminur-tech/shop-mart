@@ -44,16 +44,12 @@ const TermsPage = () => {
   ];
 
   const productImages = [
-    // 1. Electronics (Watch)
     "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop",
 
-    // 2. Gadget (Headphone)
     "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1000&auto=format&fit=crop",
 
-    // 3. Shoe (Sneakers)
     "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1000&auto=format&fit=crop",
 
-    // 4. Camera (Gadget) - আগেরটির বদলে এটি কাজ করবে
     "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1000&auto=format&fit=crop",
   ];
 
