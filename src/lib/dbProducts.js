@@ -1,4 +1,4 @@
-import connectDB from "@/lib/db";
+import connectDB from "./db"; 
 import mongoose from "mongoose";
 
 const ProductSchema = new mongoose.Schema({
@@ -11,13 +11,24 @@ const ProductSchema = new mongoose.Schema({
   image: String,
   isNew: Boolean,
   tag: String,
+}, { 
+
+  suppressReservedKeysWarning: true 
 });
 
-const Product = mongoose.models.latestproducts || mongoose.model("latestproducts", ProductSchema);
+const Product = mongoose.models.latestproducts || mongoose.model("latestproducts", ProductSchema, "latestproducts");
 
 export async function getLatestProducts() {
-  await connectDB();
-  const products = await Product.find({});
-  
-  return JSON.parse(JSON.stringify(products));
+  try {
+    await connectDB();
+    
+    const products = await Product.find({});
+    
+    console.log(`Successfully fetched ${products.length} products from MongoDB.`);
+
+    return JSON.parse(JSON.stringify(products));
+  } catch (error) {
+    console.error("❌ Error fetching products from DB:", error);
+    return [];
+  }
 }
