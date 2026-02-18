@@ -64,7 +64,7 @@ const Footer = () => {
                 Documentation
               </li>
               <li className="hover:text-white cursor-pointer transition-colors">
-                Community
+                <Link href="/community"> Community</Link>{" "}
               </li>
               <li className="hover:text-white cursor-pointer transition-colors">
                 Demos
@@ -85,13 +85,10 @@ const Footer = () => {
                 <Link href="/contact">Contact</Link>
               </li>
               <li className="hover:text-white cursor-pointer transition-colors">
-                Open positions
+                <Link href="/privacyPolice">Privacy policy</Link>
               </li>
               <li className="hover:text-white cursor-pointer transition-colors">
-                Privacy policy
-              </li>
-              <li className="hover:text-white cursor-pointer transition-colors">
-                Terms of service
+                <Link href="/terms"> Terms of service</Link>{" "}
               </li>
             </ul>
           </div>
