@@ -1,4 +1,5 @@
 import { Laptop, Shirt, Home, Zap, Heart, Disc } from 'lucide-react';
+import Link from 'next/link';
 
 const categories = [
   { name: 'Electronics', icon: Laptop, color: 'bg-blue-100 text-blue-600' },
@@ -14,12 +15,17 @@ export default function CategoryRibbon() {
     <section className="py-8 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 flex gap-8 overflow-x-auto no-scrollbar justify-center">
         {categories.map((cat) => (
-          <div key={cat.name} className="flex flex-col items-center min-w-[90px] cursor-pointer group">
+          // Categories linkup
+          <Link 
+            href={`/category/${cat.name.toLowerCase()}`} 
+            key={cat.name} 
+            className="flex flex-col items-center min-w-[90px] cursor-pointer group"
+          >
             <div className={`w-16 h-16 rounded-full flex items-center justify-center transition-transform group-hover:scale-110 ${cat.color}`}>
               <cat.icon size={28} />
             </div>
             <span className="mt-3 text-sm font-semibold text-gray-700">{cat.name}</span>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
