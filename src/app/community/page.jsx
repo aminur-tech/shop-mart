@@ -70,7 +70,7 @@ const Community = () => {
             </div>
 
             <h2 className="text-4xl md:text-7xl font-black text-slate-900 leading-tight">
-              More than just a store, it's a <br />
+              More than just a store, its a <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
                 Family.
               </span>
