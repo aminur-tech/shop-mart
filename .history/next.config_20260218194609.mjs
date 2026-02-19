@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactCompiler: true, 
+  reactCompiler: true, // তোমার আগের অপশন রাখা আছে
 
   images: {
     remotePatterns: [
@@ -65,38 +65,13 @@ const nextConfig = {
         pathname: '/**',
       },
       
-
+      // ← এই নতুন লাইনটা অ্যাড করো (এররের জন্য যেটা দরকার)
       {
         protocol: 'https',
         hostname: 'www.iwantek.com',
         port: '',
         pathname: '/**',
       },
-      {
-        protocol: 'https',
-        hostname: 'thegadgetflow.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'www.rollingstone.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-  protocol: 'https',
-  hostname: 'images.squarespace-cdn.com',
-  port: '',
-  pathname: '/**',
-},
-{
-        protocol: 'https',
-        hostname: 'www.digitaltrends.com',
-        port: '',
-        pathname: '/**',
-      },
-      
     ],
   },
 };

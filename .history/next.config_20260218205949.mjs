@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactCompiler: true, 
+  reactCompiler: true, // তোমার আগের অপশন রাখা আছে
 
   images: {
     remotePatterns: [
