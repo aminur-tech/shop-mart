@@ -8,8 +8,27 @@ const nextConfig = {
         protocol: "https",
         hostname: "images.unsplash.com",
       },
+      {
         protocol: 'https',
         hostname: 'thumbs.dreamstime.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.cnet.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'imageio.forbes.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'm.media-amazon.com',
         port: '',
         pathname: '/**',
       },
@@ -67,8 +86,6 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
-      
-
       {
         protocol: 'https',
         hostname: 'www.iwantek.com',
@@ -88,20 +105,17 @@ const nextConfig = {
         pathname: '/**',
       },
       {
-  protocol: 'https',
-  hostname: 'images.squarespace-cdn.com',
-  port: '',
-  pathname: '/**',
-},
-{
+        protocol: 'https',
+        hostname: 'images.squarespace-cdn.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
         protocol: 'https',
         hostname: 'www.digitaltrends.com',
         port: '',
         pathname: '/**',
       },
-      
-    ],
-  },
-};
-
-export default nextConfig;
+    ]
+  }
+}
