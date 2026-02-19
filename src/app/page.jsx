@@ -9,6 +9,7 @@ import TrustSection from "@/component/Home/TrustSection";
 import Newsletter from "@/component/Home/Newsletter";
 import { getLatestProducts } from "@/lib/dbProducts";
 import LatestProducts from "@/component/Home/LatestProducts";
+import LeaderShip from "@/component/LeaderShip";
 
 export default async function Home() {
   const products = await getLatestProducts();
@@ -39,8 +40,10 @@ export default async function Home() {
       <BrandLogos />
 
       {/* 8. Safety & Trust */}
-      <TrustSection />
 
+      <TrustSection />
+      {/* added asadul leaderShip  */}
+      <LeaderShip></LeaderShip>
       {/* 9. Lead Generation (Best placed at the end) */}
       <Newsletter />
     </main>
