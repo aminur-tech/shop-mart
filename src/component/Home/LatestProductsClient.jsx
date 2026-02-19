@@ -2,20 +2,23 @@
 import React, { useState } from "react";
 import ProductCard from "./ProductCard";
 
-
 const categories = ["All", "Jewelry", "Home Decor", "Accessories", "Clothing"];
 
 const LatestProductsClient = ({ initialProducts }) => {
   const [activeCategory, setActiveCategory] = useState("All");
 
   // Filtering Logic
-  const filteredProducts = activeCategory === "All"
-    ? initialProducts
-    : initialProducts.filter(p => p.category === activeCategory);
+  const filteredProducts =
+    activeCategory === "All"
+      ? initialProducts
+      : initialProducts.filter((p) => p.category === activeCategory);
 
   return (
     <>
-      <div className="flex flex-wrap justify-center gap-3 mb-12" data-aos="fade-up">
+      <div
+        className="flex flex-wrap justify-center gap-3 mb-12"
+        data-aos="fade-up"
+      >
         {categories.map((cat) => (
           <button
             key={cat}

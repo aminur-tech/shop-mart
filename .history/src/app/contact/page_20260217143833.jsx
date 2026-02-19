@@ -337,6 +337,7 @@ export default function ContactPage() {
                       placeholder="Your Full Name"
                       className="w-full px-6 py-4 bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-2xl font-medium transition-all duration-300 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-900 group-hover:border-slate-300 dark:group-hover:border-slate-500"
                     />
+                    <div className="absolute bottom-1 left-6 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full w-0 group-focus-within:w-12 transition-all duration-500"></div>
                   </div>
 
                   {/* Email Input */}
@@ -349,6 +350,7 @@ export default function ContactPage() {
                       placeholder="Your Email Address"
                       className="w-full px-6 py-4 bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-2xl font-medium transition-all duration-300 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-900 group-hover:border-slate-300 dark:group-hover:border-slate-500"
                     />
+                    <div className="absolute bottom-1 left-6 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full w-0 group-focus-within:w-12 transition-all duration-500"></div>
                   </div>
 
                   {/* Subject Input */}
@@ -361,6 +363,7 @@ export default function ContactPage() {
                       placeholder="Subject"
                       className="w-full px-6 py-4 bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-2xl font-medium transition-all duration-300 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-900 group-hover:border-slate-300 dark:group-hover:border-slate-500"
                     />
+                    <div className="absolute bottom-1 left-6 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full w-0 group-focus-within:w-12 transition-all duration-500"></div>
                   </div>
 
                   {/* Message Textarea */}
@@ -373,6 +376,7 @@ export default function ContactPage() {
                       rows="5"
                       className="w-full px-6 py-4 bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-2xl font-medium transition-all duration-300 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-900 group-hover:border-slate-300 dark:group-hover:border-slate-500 resize-none"
                     />
+                    <div className="absolute bottom-1 left-6 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full w-0 group-focus-within:w-12 transition-all duration-500"></div>
                   </div>
 
                   {/* Submit Button with 3D Effect */}
@@ -436,6 +440,9 @@ export default function ContactPage() {
                 data-aos="zoom-in"
                 data-aos-delay={idx * 100}
               >
+                {/* 3D Background Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-3xl"></div>
+
                 {/* Icon */}
                 <Icon className="text-4xl text-blue-600 dark:text-blue-400 mb-4 group-hover:scale-125 transition-transform duration-300" />
 
@@ -448,6 +455,9 @@ export default function ContactPage() {
                     {faq.a}
                   </p>
                 </div>
+
+                {/* Hover Border Animation */}
+                <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-blue-500 transition-colors duration-300 pointer-events-none"></div>
               </div>
             );
           })}
@@ -477,15 +487,24 @@ export default function ContactPage() {
                 data-aos="flip-left"
                 data-aos-delay={idx * 100}
               >
+                {/* Background Gradient */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-3xl`}></div>
+
+                {/* Content */}
                 <div className="relative z-10">
                   <div className="text-6xl mb-4 group-hover:scale-125 transition-transform duration-300">
                     <stat.Icon className="mx-auto" />
                   </div>
-                  <h3 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-2">
+                  <h3 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300">
                     {stat.number}
                   </h3>
                   <p className="text-lg font-semibold text-slate-600 dark:text-gray-300">{stat.label}</p>
                 </div>
+
+                {/* Glow on hover */}
+                <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{
+                  boxShadow: 'inset 0 0 40px rgba(99,102,241,0.2)'
+                }}></div>
               </div>
             ))}
           </div>
@@ -504,12 +523,42 @@ export default function ContactPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { title: 'Technical Support', desc: 'Expert help for all technical issues', Icon: FaWrench, color: 'from-blue-500 to-cyan-500' },
-              { title: 'Sales Assistance', desc: 'Find exactly what you need', Icon: FaShoppingCart, color: 'from-pink-500 to-rose-500' },
-              { title: 'Account Management', desc: 'Manage your account with ease', Icon: FaUser, color: 'from-purple-500 to-indigo-500' },
-              { title: 'Order Tracking', desc: 'Real-time tracking and updates', Icon: FaBox, color: 'from-orange-500 to-amber-500' },
-              { title: 'Returns & Refunds', desc: 'Hassle-free return process', Icon: FaUndo, color: 'from-emerald-500 to-teal-500' },
-              { title: 'Premium Support', desc: 'Priority assistance anytime', Icon: FaCrown, color: 'from-yellow-500 to-orange-500' }
+              { 
+                title: 'Technical Support', 
+                desc: 'Expert help for all technical issues',
+                Icon: FaWrench,
+                color: 'from-blue-500 to-cyan-500'
+              },
+              { 
+                title: 'Sales Assistance', 
+                desc: 'Find exactly what you need',
+                Icon: FaShoppingCart,
+                color: 'from-pink-500 to-rose-500'
+              },
+              { 
+                title: 'Account Management', 
+                desc: 'Manage your account with ease',
+                Icon: FaUser,
+                color: 'from-purple-500 to-indigo-500'
+              },
+              { 
+                title: 'Order Tracking', 
+                desc: 'Real-time tracking and updates',
+                Icon: FaBox,
+                color: 'from-orange-500 to-amber-500'
+              },
+              { 
+                title: 'Returns & Refunds', 
+                desc: 'Hassle-free return process',
+                Icon: FaUndo,
+                color: 'from-emerald-500 to-teal-500'
+              },
+              { 
+                title: 'Premium Support', 
+                desc: 'Priority assistance anytime',
+                Icon: FaCrown,
+                color: 'from-yellow-500 to-orange-500'
+              }
             ].map((service, idx) => (
               <div
                 key={idx}
@@ -517,6 +566,9 @@ export default function ContactPage() {
                 data-aos="zoom-in"
                 data-aos-delay={idx * 50}
               >
+                {/* Gradient Background */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-15 transition-opacity duration-300 rounded-2xl`}></div>
+
                 <div className="relative z-10">
                   <div className="text-5xl mb-4 group-hover:scale-125 transition-transform duration-300 inline-block">
                     <service.Icon />
@@ -528,6 +580,9 @@ export default function ContactPage() {
                     {service.desc}
                   </p>
                 </div>
+
+                {/* Animated Border */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-slate-300 dark:group-hover:border-slate-600 transition-all duration-300 pointer-events-none"></div>
               </div>
             ))}
           </div>
@@ -545,6 +600,7 @@ export default function ContactPage() {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
+            {/* Map Container */}
             <div 
               className="lg:col-span-2 relative rounded-3xl overflow-hidden shadow-2xl h-96 lg:h-full min-h-[500px] border-2 border-slate-200 dark:border-slate-700"
               data-aos="zoom-in"
@@ -559,13 +615,35 @@ export default function ContactPage() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
+
+              {/* Overlay Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none rounded-3xl"></div>
             </div>
 
+            {/* Location Info Cards */}
             <div className="space-y-6">
               {[
-                { title: 'Main Office', icon: FaGlobe, address: '123 Business St, New York, NY 10001', phone: '+1 (555) 123-4567', delay: 0 },
-                { title: 'Support Center', icon: FaGlobe, address: '456 Tech Avenue, San Francisco, CA 94105', phone: '+1 (555) 987-6543', delay: 100 },
-                { title: 'Global Hub', icon: FaGlobe, address: '789 International Blvd, London, UK', phone: '+44 (20) 7123-4567', delay: 200 }
+                {
+                  title: 'Main Office',
+                  icon: FaGlobe,
+                  address: '123 Business St, New York, NY 10001',
+                  phone: '+1 (555) 123-4567',
+                  delay: 0
+                },
+                {
+                  title: 'Support Center',
+                  icon: FaGlobe,
+                  address: '456 Tech Avenue, San Francisco, CA 94105',
+                  phone: '+1 (555) 987-6543',
+                  delay: 100
+                },
+                {
+                  title: 'Global Hub',
+                  icon: FaGlobe,
+                  address: '789 International Blvd, London, UK',
+                  phone: '+44 (20) 7123-4567',
+                  delay: 200
+                }
               ].map((location, idx) => (
                 <div
                   key={idx}
@@ -599,14 +677,46 @@ export default function ContactPage() {
       {/* ===== TESTIMONIALS SECTION - SWIPER CAROUSEL ===== */}
       <section className="px-4 py-32 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 dark:from-slate-950 dark:via-purple-950 dark:to-slate-950 relative min-h-screen flex items-center justify-center overflow-hidden">
         
+        {/* 3D Animated Background */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div 
             className="absolute top-1/4 -left-32 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"
-            style={{ animation: 'float 8s ease-in-out infinite', backdropFilter: 'blur(40px)' }}
+            style={{
+              animation: 'float 8s ease-in-out infinite',
+              backdropFilter: 'blur(40px)'
+            }}
+          ></div>
+          <div 
+            className="absolute bottom-1/4 -right-32 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl"
+            style={{
+              animation: 'float 10s ease-in-out infinite',
+              animationDelay: '2s',
+              backdropFilter: 'blur(40px)'
+            }}
+          ></div>
+          <div 
+            className="absolute top-1/2 left-1/3 w-80 h-80 bg-purple-500/15 rounded-full blur-3xl"
+            style={{
+              animation: 'float 12s ease-in-out infinite',
+              animationDelay: '4s'
+            }}
           ></div>
         </div>
 
+        {/* Grid Background */}
+        <div className="absolute inset-0 opacity-10">
+          <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <pattern id="gridTestimonials" x="10" y="10" width="10" height="10" patternUnits="userSpaceOnUse">
+                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" strokeWidth="0.5"/>
+              </pattern>
+            </defs>
+            <rect width="100" height="100" fill="url(#gridTestimonials)" />
+          </svg>
+        </div>
+
         <div className="max-w-6xl mx-auto w-full relative z-10">
+          {/* Header */}
           <div className="text-center mb-20" data-aos="fade-up">
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 drop-shadow-2xl">
               What Our Customers Say
@@ -616,6 +726,7 @@ export default function ContactPage() {
             </p>
           </div>
 
+          {/* Swiper Carousel */}
           <div className="relative w-full h-full min-h-96 md:min-h-[500px] flex items-center justify-center pb-20">
             <Swiper
               modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
@@ -636,7 +747,10 @@ export default function ContactPage() {
                 modifier: 1.5,
                 slideShadows: true,
               }}
-              autoplay={{ delay: 5000, disableOnInteraction: false }}
+              autoplay={{
+                delay: 5000,
+                disableOnInteraction: false,
+              }}
               pagination={{ clickable: true }}
               navigation={true}
               loop={true}
@@ -644,36 +758,78 @@ export default function ContactPage() {
               style={{ '--swiper-navigation-color': '#fff', '--swiper-pagination-color': '#fff' }}
             >
               {[
-                { name: 'Sarah Johnson', role: 'Business Owner', text: 'Exceptional service and support. The team went above and beyond.', rating: 5, initials: 'SJ' },
-                { name: 'Michael Chen', role: 'Tech Enthusiast', text: 'Amazing experience from start to finish. Unmatched attention to detail.', rating: 5, initials: 'MC' },
-                { name: 'Emily Rodriguez', role: 'Marketing Manager', text: 'Professional, responsive, and incredibly helpful team.', rating: 5, initials: 'ER' }
+                {
+                  name: 'Sarah Johnson',
+                  role: 'Business Owner',
+                  text: 'Exceptional service and support. The team went above and beyond to help us solve every challenge.',
+                  rating: 5,
+                  initials: 'SJ',
+                },
+                {
+                  name: 'Michael Chen',
+                  role: 'Tech Enthusiast',
+                  text: 'Amazing experience from start to finish. The attention to detail and customer care is unmatched.',
+                  rating: 5,
+                  initials: 'MC',
+                },
+                {
+                  name: 'Emily Rodriguez',
+                  role: 'Marketing Manager',
+                  text: 'Professional, responsive, and incredibly helpful team. They truly care about their customers.',
+                  rating: 5,
+                  initials: 'ER',
+                }
               ].map((testimonial, idx) => (
                 <SwiperSlide key={idx} className="h-80 md:h-96 flex items-center justify-center p-4">
-                  <div className="relative w-full h-full rounded-3xl p-8 md:p-10 flex flex-col justify-center items-center text-center overflow-hidden bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 shadow-2xl">
+                  {/* Card Container */}
+                  <div 
+                    className="relative w-full h-full rounded-3xl p-8 md:p-10 flex flex-col justify-center items-center text-center overflow-hidden"
+                    style={{
+                      perspective: '1200px',
+                    }}
+                  >
+                    {/* Card Background with Gradient */}
+                    <div 
+                      className="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 opacity-90 shadow-2xl"
+                      style={{
+                        filter: 'drop-shadow(0 25px 50px rgba(0,0,0,0.3))'
+                      }}
+                    ></div>
+
+                    {/* Glassmorphism Overlay */}
                     <div className="absolute inset-0 rounded-3xl bg-white/10 backdrop-blur-md"></div>
+
+                    {/* Content */}
                     <div className="relative z-10 w-full flex flex-col items-center justify-center h-full">
-                      <div className="flex gap-1 mb-6 justify-center">
+                      {/* Stars */}
+                      <div className="flex gap-1 mb-3 md:mb-6 justify-center">
                         {[...Array(testimonial.rating)].map((_, i) => (
-                          <FaStar key={i} className="text-3xl text-yellow-300 animate-bounce" style={{ animationDelay: `${i * 0.1}s` }} />
+                          <FaStar key={i} className="text-lg md:text-3xl text-yellow-300 animate-bounce" style={{ animationDelay: `${i * 0.1}s` }} />
                         ))}
                       </div>
-                      <p className="text-white text-lg lg:text-2xl font-bold mb-8 leading-relaxed" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.3)' }}>
+
+                      {/* Quote */}
+                      <p className="text-white text-sm md:text-lg lg:text-2xl font-bold mb-4 md:mb-8 leading-relaxed" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.3)' }}>
                         "{testimonial.text}"
                       </p>
-                      <div className="flex flex-col items-center gap-4">
-                        <div className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-md border-2 border-white/40 flex items-center justify-center text-2xl font-bold text-white">
+
+                      {/* Avatar & Name */}
+                      <div className="flex flex-col items-center gap-2 md:gap-4">
+                        <div className="w-14 h-14 md:w-20 md:h-20 rounded-full bg-white/20 backdrop-blur-md border-2 border-white/40 flex items-center justify-center text-lg md:text-2xl font-bold text-white shadow-lg hover:scale-110 transition-transform duration-300">
                           {testimonial.initials}
                         </div>
                         <div>
-                          <p className="text-white font-black text-lg lg:text-2xl drop-shadow-lg">
+                          <p className="text-white font-black text-sm md:text-lg lg:text-2xl drop-shadow-lg">
                             {testimonial.name}
                           </p>
-                          <p className="text-white/80 text-sm lg:text-lg font-semibold drop-shadow-lg">
+                          <p className="text-white/80 text-xs md:text-sm lg:text-lg font-semibold drop-shadow-lg">
                             {testimonial.role}
                           </p>
                         </div>
                       </div>
                     </div>
+
+                    {/* Border Glow */}
                     <div className="absolute inset-0 rounded-3xl border-2 border-white/30" style={{ boxShadow: 'inset 0 0 40px rgba(255,255,255,0.1)' }}></div>
                   </div>
                 </SwiperSlide>
@@ -681,6 +837,7 @@ export default function ContactPage() {
             </Swiper>
           </div>
 
+          {/* Bottom CTA */}
           <div className="text-center mt-20" data-aos="fade-up" data-aos-delay="300">
             <p className="text-white/80 text-lg mb-6">Join thousands of satisfied customers</p>
             <button className="px-8 py-4 bg-white text-purple-600 font-bold rounded-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95">
@@ -692,6 +849,7 @@ export default function ContactPage() {
 
       {/* ===== NEWSLETTER SECTION ===== */}
       <section className="px-4 py-24 bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 dark:from-purple-800 dark:via-pink-800 dark:to-red-800 relative overflow-hidden">
+        {/* Background Animation */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -top-40 -right-40 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
@@ -725,6 +883,7 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* ===== ANIMATIONS STYLES ===== */}
       <style jsx>{`
         @keyframes float {
           0%, 100% { transform: translateY(0px) translateX(0px); }
@@ -759,6 +918,7 @@ export default function ContactPage() {
           transform: perspective(600px) rotateY(0);
         }
 
+        /* Swiper Custom Styling */
         :global(.swiper-button-next)::after,
         :global(.swiper-button-prev)::after {
           font-size: 24px;

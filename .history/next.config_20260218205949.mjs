@@ -1,13 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactCompiler: true, 
+  reactCompiler: true, // তোমার আগের অপশন রাখা আছে
 
   images: {
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-      },
         protocol: 'https',
         hostname: 'thumbs.dreamstime.com',
         port: '',

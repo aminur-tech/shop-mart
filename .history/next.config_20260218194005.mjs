@@ -1,13 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactCompiler: true, 
+  reactCompiler: true, // তোমার আগের অপশন রাখা আছে
 
   images: {
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-      },
         protocol: 'https',
         hostname: 'thumbs.dreamstime.com',
         port: '',
@@ -64,38 +61,6 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'cdn.mos.cms.futurecdn.net',
-        port: '',
-        pathname: '/**',
-      },
-      
-
-      {
-        protocol: 'https',
-        hostname: 'www.iwantek.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'thegadgetflow.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'www.rollingstone.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-  protocol: 'https',
-  hostname: 'images.squarespace-cdn.com',
-  port: '',
-  pathname: '/**',
-},
-{
-        protocol: 'https',
-        hostname: 'www.digitaltrends.com',
         port: '',
         pathname: '/**',
       },

@@ -21,7 +21,7 @@ export default function CategoryRibbon() {
                 <div className={`w-16 h-16 rounded-full flex items-center justify-center transition-transform group-hover:scale-110 ${cat.color}`}>
                   <cat.icon size={28} />
                 </div>
-                <span className="mt-3 text-sm font-semibold text-gray-700 text-center leading-tight"> {/* ← এখানে text-center + leading-tight যোগ */}
+                <span className="mt-2 text-sm font-semibold text-gray-700 text-center leading-none"> {/* ← mt-2 + leading-none */}
                   {cat.name}
                 </span>
               </Link>
@@ -30,7 +30,7 @@ export default function CategoryRibbon() {
                 <div className={`w-16 h-16 rounded-full flex items-center justify-center transition-transform group-hover:scale-110 ${cat.color}`}>
                   <cat.icon size={28} />
                 </div>
-                <span className="mt-3 text-sm font-semibold text-gray-700 text-center leading-tight"> {/* ← এখানেও একই */}
+                <span className="mt-2 text-sm font-semibold text-gray-700 text-center leading-none"> {/* ← একই */}
                   {cat.name}
                 </span>
               </>
