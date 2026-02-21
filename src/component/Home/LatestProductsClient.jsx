@@ -2,33 +2,33 @@
 import React, { useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
 
+
 const categories = ["All", "Jewelry", "Home Decor", "Accessories", "Clothing"];
 
 const LatestProductsClient = ({ initialProducts }) => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 8; // প্রতি পেজে ৮টি প্রোডাক্ট
+  const productsPerPage = 8;
 
-  // ১. ফিল্টারিং লজিক
+  // Filtering Logic
   const filteredProducts = activeCategory === "All"
     ? initialProducts
     : initialProducts.filter(p => p.category === activeCategory);
 
-  // ২. প্যাগিনেশন লজিক
+  // Pagination Logic
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
   const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
 
-  // ক্যাটাগরি চেঞ্জ করলে পেজ ১-এ ফিরিয়ে নেওয়া
+  
   useEffect(() => {
     setCurrentPage(1);
   }, [activeCategory]);
 
   return (
     <>
-      {/* ক্যাটাগরি বাটন */}
-      <div className="flex flex-wrap justify-center gap-3 mb-12" data-aos="fade-up">
+      <div className="flex flex-wrap justify-center gap-3 mb-12">
         {categories.map((cat) => (
           <button
             key={cat}
@@ -44,14 +44,12 @@ const LatestProductsClient = ({ initialProducts }) => {
         ))}
       </div>
 
-      {/* প্রোডাক্ট গ্রিড (এখন শুধু currentProducts দেখাবে) */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
         {currentProducts.map((item) => (
           <ProductCard key={item._id} product={item} />
         ))}
       </div>
 
-      {/* ৩. প্যাগিনেশন বাটন সমূহ */}
       {totalPages > 1 && (
         <div className="flex justify-center items-center gap-4 mt-16">
           <button
@@ -96,6 +94,7 @@ const LatestProductsClient = ({ initialProducts }) => {
         </div>
       )}
 
+      {/* If there no product */}
       {filteredProducts.length === 0 && (
         <div className="text-center py-20 text-gray-400">
           No products found in this category.
