@@ -45,8 +45,8 @@ const Navbar = () => {
   const user = { name: "Shuvo", email: "shuvo@example.com", initials: "S" };
 
   return (
-    <header className="relative w-full border-b border-gray-200 bg-[#F5F3EE] z-40">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <header className="fixed w-full border-b border-gray-200 bg-[#F5F3EE] z-40">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-2">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link
@@ -120,9 +120,9 @@ const Navbar = () => {
 
                     {/* Gadgets */}
                     <Link
-                      href="/gadgets"
+                      href="/categories/gadgets"
                       className={`block transition-all ${
-                        pathname.startsWith("/gadgets")
+                        pathname.startsWith("/categories/gadgets")
                           ? "text-amber-800 font-semibold"
                           : "text-gray-700 hover:text-amber-800 hover:translate-x-1.5"
                       }`}
@@ -132,7 +132,7 @@ const Navbar = () => {
 
                     {/* Beauty */}
                     <Link
-                      href="/beauty"
+                      href="/categories/beauty"
                       className={`block transition-all ${
                         pathname.startsWith("/beauty")
                           ? "text-amber-800 font-semibold"
@@ -144,9 +144,9 @@ const Navbar = () => {
 
                     {/* Music & Instruments */}
                     <Link
-                      href="/music"
+                      href="/categories/music"
                       className={`block transition-all ${
-                        pathname.startsWith("/music")
+                        pathname.startsWith("/categories/music")
                           ? "text-amber-800 font-semibold"
                           : "text-gray-700 hover:text-amber-800 hover:translate-x-1.5"
                       }`}
@@ -156,10 +156,9 @@ const Navbar = () => {
 
                     {/* View All Products */}
                     <Link
-                      href="/product" 
+                      href="/"
                       className={`block transition-all font-semibold ${
-                        pathname.startsWith("/products") ||
-                        pathname === "/products"
+                        pathname.startsWith("/") || pathname === "/products"
                           ? "text-amber-900 underline underline-offset-4"
                           : "text-amber-700 hover:text-amber-900 hover:underline hover:underline-offset-4"
                       }`}
@@ -319,15 +318,89 @@ const Navbar = () => {
             </div>
 
             {/* Contact */}
-            <Link
-              href="/contact"
-              className={`relative py-7 transition-colors ${isContactActive ? "text-amber-800" : "text-gray-700 hover:text-amber-800"}`}
-            >
-              Contact
-              <span
-                className={`absolute left-0 -bottom-1 h-0.5 bg-amber-800 transition-all ${isContactActive ? "w-full" : "w-0 hover:w-full"}`}
-              />
-            </Link>
+            <div className="group relative">
+              <Link
+                href="/contact"
+                className={`relative py-7 transition-colors ${
+                  isContactActive
+                    ? "text-amber-800"
+                    : "text-gray-700 hover:text-amber-800"
+                }`}
+              >
+                Contact
+                <span
+                  className={`absolute left-0 -bottom-1 h-0.5 bg-amber-800 transition-all duration-300 ${
+                    isContactActive ? "w-full" : "w-0 group-hover:w-full"
+                  }`}
+                />
+              </Link>
+
+              {/* Mega Menu */}
+              <div className="absolute -left-15 mt-5  -translate-x-4/7 top-full w-screen bg-white border-2  rounded-3xl p-6 border-gray-200 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
+                <div className="grid grid-cols-3 gap-8">
+                  {/* Column 1 - Contact Info */}
+                  <div>
+                    <h4 className="font-semibold text-gray-800 mb-4">
+                      Get In Touch
+                    </h4>
+                    <ul className="space-y-2 text-gray-600">
+                      <li>📍 Dhaka, Bangladesh</li>
+                      <li>📞 +880 1234-567890</li>
+                      <li>✉️ support@example.com</li>
+                    </ul>
+                  </div>
+
+                  {/* Column 2 - Quick Links */}
+                  <div>
+                    <h4 className="font-semibold text-gray-800 mb-4">
+                      Quick Links
+                    </h4>
+                    <ul className="space-y-2">
+                      <li>
+                        <Link
+                          href="/contact/faq"
+                          className="text-gray-600 hover:text-amber-800"
+                        >
+                          FAQ
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/privacyPolice"
+                          className="text-gray-600 hover:text-amber-800"
+                        >
+                          Privacy policy
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/contact/refund_policy"
+                          className="text-gray-600 hover:text-amber-800"
+                        >
+                          Return Policy
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Column 3 - CTA */}
+                  <div className="bg-amber-50 p-5 rounded-lg">
+                    <h4 className="font-semibold text-amber-800 mb-2">
+                      Need Help?
+                    </h4>
+                    <p className="text-sm text-gray-600">
+                      Our team is available 24/7 to assist you.
+                    </p>
+                    <Link
+                      href="/contact"
+                      className="inline-block mt-3 text-sm font-medium text-amber-800 hover:underline"
+                    >
+                      Contact Us →
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
           </nav>
 
           {/* Right side */}

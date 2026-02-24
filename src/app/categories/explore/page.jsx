@@ -4,7 +4,7 @@ import ProductCard from "@/component/Home/ProductCard";
 
 function LoadingSkeleton() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div className="grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       {Array.from({ length: 8 }).map((_, i) => (
         <div
           key={i}
@@ -23,7 +23,7 @@ function LoadingSkeleton() {
 
 export default async function ExplorePage() {
   const products = await getLatestProducts({
-    category: "fashion", // চাইলে "all" করতে পারো
+    category: "fashion", 
     limit: 20,
   });
 
@@ -31,7 +31,7 @@ export default async function ExplorePage() {
     <div className="bg-gray-50 min-h-screen">
       
       {/* HERO SECTION */}
-      <section className="text-center py-16 bg-black text-white">
+      <section className="text-center  py-16 bg-black text-white">
         <h1 className="text-4xl font-bold mb-4">
           Explore Marketplace
         </h1>
